@@ -1,0 +1,21 @@
+#需要加载的配置文件
+spring:
+  application:
+    name: test1
+  profiles:
+    active: dev
+logging:
+  file: shidun.log
+  level:
+    com.shidun.dao: debug
+  # root: info
+
+mybatis:
+  #mybatis数据库字段开启驼峰转换
+  configuration:
+    map-underscore-to-camel-case: true
+    #打印sql
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  #对应mapper映射xml文件的所在路径
+  mapper-locations: classpath:mapping/**/*.xml
+
