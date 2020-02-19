@@ -1,14 +1,14 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/shidun?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/cp_db?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
     username: root
-    password: sd123456
+    password: root
 server:
   port: 8080
-eureka:
-  instance:
-    hostname: 127.0.0.1
-  client:
-    service-url:
-      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+#eureka:
+#  instance:
+#    hostname: 127.0.0.1
+#  client:
+#    service-url:
+#      defaultZone: http://${eureka.instance.hostname}:8761/eureka/

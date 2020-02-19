@@ -1,11 +1,9 @@
 #需要加载的配置文件
 spring:
-  application:
-    name: test1
   profiles:
     active: dev
 logging:
-  file: shidun.log
+  file: caipiao.log
   level:
     com.shidun.dao: debug
   # root: info

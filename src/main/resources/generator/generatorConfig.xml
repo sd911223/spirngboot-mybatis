@@ -34,7 +34,7 @@
         </commentGenerator>
 
         <!-- jdbc连接 -->
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/shidun" userId="root"
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/cp_db" userId="root"
                         password="sd123456"/>
 
         <!-- 类型转换 -->
@@ -44,7 +44,7 @@
         </javaTypeResolver>
 
         <!-- 生成实体类地址 -->
-        <javaModelGenerator targetPackage="com.shidun.spirngbootmybatis.model" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.shidun.model" targetProject="src/main/java">
             <property name="enableSubPackages" value="false"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
@@ -55,7 +55,7 @@
         </sqlMapGenerator>
 
         <!-- 生成mapper对应client，也就是接口dao -->
-        <javaClientGenerator targetPackage="com.shidun.spirngbootmybatis.dao" targetProject="src/main/java"
+        <javaClientGenerator targetPackage="com.shidun.dao" targetProject="src/main/java"
                              type="XMLMAPPER">
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
@@ -75,7 +75,7 @@
 <!--              <generatedKey column="id" sqlStatement="Mysql" identity="true" /> &ndash;&gt;-->
 <!--        </table>-->
 
-        <table tableName="user_tab" enableCountByExample="true"
+        <table tableName="code" enableCountByExample="true"
                enableSelectByPrimaryKey="true"
                enableUpdateByPrimaryKey="true"
                enableDeleteByPrimaryKey="true"
