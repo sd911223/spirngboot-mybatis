@@ -75,7 +75,7 @@
 <!--              <generatedKey column="id" sqlStatement="Mysql" identity="true" /> &ndash;&gt;-->
 <!--        </table>-->
 
-        <table tableName="code" enableCountByExample="true"
+        <table tableName="phone_num" enableCountByExample="true"
                enableSelectByPrimaryKey="true"
                enableUpdateByPrimaryKey="true"
                enableDeleteByPrimaryKey="true"

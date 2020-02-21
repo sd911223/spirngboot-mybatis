@@ -1,6 +1,7 @@
 package com.shidun.contorller;
 
 import com.shidun.model.Code;
+import com.shidun.model.PhoneNum;
 import com.shidun.service.CodeSerice;
 import com.shidun.util.Msg;
 import com.shidun.util.ResultUtil;
@@ -11,7 +12,6 @@ import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -67,15 +67,28 @@ public class AddCodeContorller {
             ResultUtil.error(400, "彩票号码不能为空!");
         }
         Code code = codeSerice.queryCode(issue, lottery);
-        if (Objects.isNull(code)){
+        if (Objects.isNull(code)) {
             return "";
         }
         return code.getCode();
     }
 
-    public static void main(String[] args) {
-        Double resultValue = -1D;
-        resultValue=-Double.MAX_VALUE;
-        System.out.println(resultValue);
+    @ApiOperation("查询手机号码")
+    @RequestMapping(value = "/queryPhone", method = RequestMethod.GET)
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "phoneNum", value = "手机号", required = true)
+    })
+    public String queryPhone(String phoneNum) {
+        if ("".equals(phoneNum) || null == phoneNum) {
+            log.error("手机号不能空!");
+            ResultUtil.error(400, "期数不能为空!");
+        }
+        PhoneNum num = codeSerice.queryPhone(phoneNum);
+        if (Objects.isNull(phoneNum)) {
+            return "无";
+        }
+        return num.getMobileNum();
     }
+
+
 }
