@@ -81,7 +81,7 @@ public class AddCodeContorller {
     public String queryPhone(String phoneNum) {
         if ("".equals(phoneNum) || null == phoneNum) {
             log.error("手机号不能空!");
-            ResultUtil.error(400, "期数不能为空!");
+            ResultUtil.error(400, "手机号不能为空!");
         }
         PhoneNum num = codeSerice.queryPhone(phoneNum);
         if (Objects.isNull(phoneNum)) {
